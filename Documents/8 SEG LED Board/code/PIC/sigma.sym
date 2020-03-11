@@ -1,0 +1,223 @@
+__S0 8000 0 ABS 0
+__S1 26 0 ABS 0
+__Hintentry 0 0 ABS 0
+__Lintentry 0 0 ABS 0
+_main 7F60 0 CODE 0
+start 0 0 CODE 0
+_show 7EEE 0 CODE 0
+__size_of_show 0 0 ABS 0
+_TRISA F92 0 ABS 0
+_TRISB F93 0 ABS 0
+_PORTA F80 0 ABS 0
+_PORTB F81 0 ABS 0
+__Hirdata 0 0 CODE 0
+__Lirdata 0 0 CODE 0
+__HRAM 0 0 ABS 0
+__LRAM 1 0 ABS 0
+show@show_code 1E 0 COMRAM 1
+__Hconfig 0 0 CONFIG 0
+__Lconfig 0 0 CONFIG 0
+main@i 24 0 COMRAM 1
+main@k 22 0 COMRAM 1
+main@n 20 0 COMRAM 1
+__Hbigram 0 0 ABS 0
+__Lbigram 0 0 ABS 0
+__Hrparam 0 0 ABS 0
+__Lrparam 0 0 ABS 0
+__Hram 0 0 ABS 0
+__Lram 0 0 ABS 0
+__Hcomram 0 0 ABS 0
+__Lcomram 0 0 ABS 0
+?_main 16 0 COMRAM 1
+__Hsfr 0 0 ABS 0
+__Lsfr 0 0 ABS 0
+__Hbss 0 0 RAM 1
+__Lbss 0 0 RAM 1
+__Hnvrram 0 0 COMRAM 1
+__Lnvrram 0 0 COMRAM 1
+?_show 1C 0 COMRAM 1
+__Heeprom_data 0 0 EEDATA 0
+__Leeprom_data 0 0 EEDATA 0
+__Hintsave_regs 0 0 BIGRAM 1
+__Lintsave_regs 0 0 BIGRAM 1
+__Hbigbss 0 0 BIGRAM 1
+__Lbigbss 0 0 BIGRAM 1
+__Hintret 0 0 ABS 0
+__Lintret 0 0 ABS 0
+__Hramtop 600 0 RAM 0
+__Lramtop 600 0 RAM 0
+__Hstruct 0 0 COMRAM 1
+__Lstruct 0 0 COMRAM 1
+__Hbigdata 0 0 BIGRAM 1
+__Lbigdata 0 0 BIGRAM 1
+__Hmediumconst 0 0 MEDIUMCONST 0
+__Lmediumconst 0 0 MEDIUMCONST 0
+__Hfarbss 0 0 FARRAM 0
+__Lfarbss 0 0 FARRAM 0
+__Hintcode 0 0 CODE 0
+__Lintcode 0 0 CODE 0
+__Hfardata 0 0 FARRAM 0
+__Lfardata 0 0 FARRAM 0
+_table0 1 0 COMRAM 1
+_table1 12 0 COMRAM 1
+__Habs1 0 0 ABS 0
+__Labs1 0 0 ABS 0
+_delay1 7F36 0 CODE 0
+??_sigma_portint 16 0 COMRAM 1
+__Hdata 0 0 ABS 0
+__Ldata 0 0 ABS 0
+??_main 20 0 COMRAM 1
+__Htemp 0 0 COMRAM 1
+__Ltemp 0 0 COMRAM 1
+__Hrbit 0 0 COMRAM 1
+__Lrbit 0 0 COMRAM 1
+__Hinit 0 0 CODE 0
+__Linit 0 0 CODE 0
+__Hintcodelo 0 0 CODE 0
+__Lintcodelo 0 0 CODE 0
+__Hrbss 0 0 COMRAM 1
+__end_of_main 7ED2 0 CODE 0
+__Lrbss 0 0 COMRAM 1
+??_show 20 0 COMRAM 1
+__Htext 0 0 ABS 0
+__Ltext 0 0 ABS 0
+end_of_initialization 7F30 0 CODE 0
+__Hibigdata 0 0 CODE 0
+__Libigdata 0 0 CODE 0
+__Hifardata 0 0 CODE 0
+__Lifardata 0 0 CODE 0
+__Hbank0 0 0 ABS 0
+__Lbank0 0 0 ABS 0
+__Hbank1 0 0 ABS 0
+__Lbank1 0 0 ABS 0
+__Hbank2 0 0 ABS 0
+__Lbank2 0 0 ABS 0
+__Hbank3 0 0 ABS 0
+__Lbank3 0 0 ABS 0
+__Hbank4 0 0 ABS 0
+__Lbank4 0 0 ABS 0
+__Hbank5 0 0 ABS 0
+__Lbank5 0 0 ABS 0
+__Hpowerup 0 0 CODE 0
+__Lpowerup 0 0 CODE 0
+?_delay1 16 0 COMRAM 1
+__Htext0 0 0 ABS 0
+__Ltext0 0 0 ABS 0
+__Htext1 0 0 ABS 0
+__Ltext1 0 0 ABS 0
+__ptext0 7F60 0 CODE 0
+__Htext2 0 0 ABS 0
+__Ltext2 0 0 ABS 0
+__ptext1 7ED2 0 CODE 0
+__Htext3 0 0 ABS 0
+__Ltext3 0 0 ABS 0
+__ptext2 7EEE 0 CODE 0
+__Htext4 0 0 ABS 0
+__Ltext4 0 0 ABS 0
+__ptext3 7F36 0 CODE 0
+__ptext4 0 0 CODE 0
+__Hclrtext 0 0 ABS 0
+__Lclrtext 0 0 ABS 0
+delay1@i 18 0 COMRAM 1
+delay1@j 1A 0 COMRAM 1
+delay1@x 16 0 COMRAM 1
+__end_of_show 7F10 0 CODE 0
+__Hidata 0 0 CODE 0
+__Lidata 0 0 CODE 0
+__Hrdata 0 0 COMRAM 1
+__Lrdata 0 0 COMRAM 1
+__Hidloc 0 0 IDLOC 0
+__Lidloc 0 0 IDLOC 0
+__Hparam 0 0 ABS 0
+__Lparam 0 0 ABS 0
+__HcstackCOMRAM 0 0 ABS 0
+__LcstackCOMRAM 0 0 ABS 0
+__pcstackCOMRAM 16 0 COMRAM 1
+__Hsmallconst 0 0 SMALLCONST 0
+__Lsmallconst 0 0 SMALLCONST 0
+__Hnvbit 0 0 COMRAM 1
+__Lnvbit 0 0 COMRAM 1
+__Hcinit 0 0 ABS 0
+__Lcinit 0 0 ABS 0
+__pcinit 7F10 0 CODE 0
+__ramtop 600 0 RAM 0
+__mediumconst 0 0 MEDIUMCONST 0
+__size_of_main 0 0 ABS 0
+__Hconst 0 0 CODE 0
+__Lconst 0 0 CODE 0
+?_sigma_portint 16 0 COMRAM 1
+__Hpa_nodes 0 0 ABS 0
+__Lpa_nodes 0 0 ABS 0
+__Hend_init 4 0 CODE 0
+__size_of_sigma_portint 0 0 ABS 0
+__Lend_init 0 0 CODE 0
+__HidataCOMRAM 0 0 ABS 0
+__LidataCOMRAM 0 0 ABS 0
+__pidataCOMRAM 7ED9 0 CODE 0
+__smallconst 0 0 SMALLCONST 0
+__Hreset_vec 0 0 CODE 0
+__Lreset_vec 0 0 CODE 0
+_sigma_portint 7ED2 0 CODE 0
+__accesstop 80 0 ABS 0
+__Hintcode_body 0 0 ABS 0
+__Lintcode_body 0 0 ABS 0
+show@show_bit 1C 0 COMRAM 1
+intlevel0 0 0 CODE 0
+intlevel1 0 0 CODE 0
+intlevel2 0 0 CODE 0
+intlevel3 0 0 CODE 0
+??_delay1 18 0 COMRAM 1
+__HdataCOMRAM 0 0 ABS 0
+__LdataCOMRAM 0 0 ABS 0
+__pdataCOMRAM 1 0 COMRAM 1
+start_initialization 7F10 0 CODE 0
+__end_of_sigma_portint 7ED8 0 CODE 0
+__size_of_delay1 0 0 ABS 0
+__end_of_delay1 7F60 0 CODE 0
+__activetblptr 0 0 ABS 0
+%segments
+reset_vec 0 3 CODE 0 0
+dataCOMRAM 1 25 COMRAM 1 1
+text0 7F60 7FFF CODE 7F60 0
+text3 7F36 7F5F CODE 7F36 0
+cinit 7F10 7F35 CODE 7F10 0
+text2 7EEE 7F0F CODE 7EEE 0
+idataCOMRAM 7ED9 7EED CODE 7ED9 0
+text1 7ED2 7ED7 CODE 7ED2 0
+%locals
+startup.obj
+startup.as
+startup.as
+startup.as
+startup.as
+112 0 0 CODE 0
+sigma.obj
+sigma.as
+E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c
+3 7ED9 0 CODE 0
+5 7EEA 0 CODE 0
+E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c
+5 7F10 0 CODE 0
+E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c
+27 7F60 0 CODE 0
+28 7F70 0 CODE 0
+30 7F74 0 CODE 0
+31 7F78 0 CODE 0
+32 7F8A 0 CODE 0
+33 7F9C 0 CODE 0
+34 7FAE 0 CODE 0
+37 7FC0 0 CODE 0
+39 7FE0 0 CODE 0
+41 7FF4 0 CODE 0
+E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c
+14 7ED2 0 CODE 0
+15 7ED4 0 CODE 0
+16 7ED6 0 CODE 0
+E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c
+19 7EEE 0 CODE 0
+20 7EFA 0 CODE 0
+21 7F06 0 CODE 0
+E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c
+9 7F36 0 CODE 0
+10 7F3C 0 CODE 0
+9 7F4E 0 CODE 0

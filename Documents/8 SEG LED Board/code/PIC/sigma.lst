@@ -1,0 +1,733 @@
+
+
+HI-TECH Software PIC18 PRO Macro Assembler V9.80 build 11162 
+                                                                                               Mon Dec 26 15:31:33 2011
+
+HI-TECH Software Omniscient Code Generator (PRO mode) build 11162
+     1                           	processor	18F4520
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	pm
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    14                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    15                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    16                           	psect	pa_nodes,global,class=CODE,delta=1
+    17  0000                     indf2	equ	0xFDF
+    18                           fsr2h	equ	0xFDA
+    19                           fsr2l	equ	0xFD9
+    20                           status	equ	0xFD8
+    21                           
+    22                           	psect	idataCOMRAM
+    23  007ED9                     __pidataCOMRAM:
+    24                           	opt stack 0
+    25                           
+    26                           ;initializer for _table0
+    27  007ED9  C0                 	db	192
+    28  007EDA  F9                 	db	249
+    29  007EDB  A4                 	db	164
+    30  007EDC  B0                 	db	176
+    31  007EDD  99                 	db	153
+    32  007EDE  92                 	db	146
+    33  007EDF  82                 	db	130
+    34  007EE0  F8                 	db	248
+    35  007EE1  80                 	db	128
+    36  007EE2  90                 	db	144
+    37  007EE3  88                 	db	136
+    38  007EE4  83                 	db	131
+    39  007EE5  C6                 	db	198
+    40  007EE6  A1                 	db	161
+    41  007EE7  86                 	db	134
+    42  007EE8  8E                 	db	142
+    43  007EE9  00                 	db	0
+    44                           
+    45                           ;initializer for _table1
+    46  007EEA  21                 	db	33
+    47  007EEB  22                 	db	34
+    48  007EEC  24                 	db	36
+    49  007EED  28                 	db	40
+    50  0000                     _PORTA	set	3968
+    51  0000                     _PORTB	set	3969
+    52  0000                     _TRISA	set	3986
+    53  0000                     _TRISB	set	3987
+    54                           indf2	equ	0xFDF
+    55                           fsr2h	equ	0xFDA
+    56                           fsr2l	equ	0xFD9
+    57                           status	equ	0xFD8
+    58                           
+    59                           ; #config settings
+    60                           
+    61                           	psect	cinit
+    62  007F10                     __pcinit:
+    63                           	opt stack 0
+    64  007F10                     start_initialization:
+    65                           	opt stack 0
+    66                           
+    67                           ; Initialize objects allocated to COMRAM (21 bytes)
+    68                           ; load TBLPTR registers with __pidataCOMRAM
+    69  007F10  0ED9               	movlw	low __pidataCOMRAM
+    70  007F12  6EF6               	movwf	tblptrl,c
+    71  007F14  0E7E               	movlw	high __pidataCOMRAM
+    72  007F16  6EF7               	movwf	tblptrh,c
+    73  007F18  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+    74  007F1A  6EF8               	movwf	tblptru,c
+    75  007F1C  EE00  F001         	lfsr	0,__pdataCOMRAM
+    76  007F20  EE10 F015          	lfsr	1,21
+    77  007F24                     copy_data0:
+    78  007F24  0009               	tblrd		*+
+    79  007F26  CFF5 FFEE          	movff	tablat,postinc0
+    80  007F2A  50E5               	movf	postdec1,w,c
+    81  007F2C  50E1               	movf	fsr1l,w,c
+    82  007F2E  E1FA               	bnz	copy_data0
+    83  007F30                     end_of_initialization:
+    84                           	opt stack 0
+    85  007F30  0100               	movlb	0
+    86  007F32  EFB0  F03F         	goto	_main	;jump to C main() function
+    87                           tblptru	equ	0xFF8
+    88                           tblptrh	equ	0xFF7
+    89                           tblptrl	equ	0xFF6
+    90                           tablat	equ	0xFF5
+    91                           postinc0	equ	0xFEE
+    92                           postdec1	equ	0xFE5
+    93                           fsr1l	equ	0xFE1
+    94                           indf2	equ	0xFDF
+    95                           fsr2h	equ	0xFDA
+    96                           fsr2l	equ	0xFD9
+    97                           status	equ	0xFD8
+    98                           
+    99                           	psect	dataCOMRAM
+   100  000001                     __pdataCOMRAM:
+   101                           	opt stack 0
+   102  000001                     _table0:
+   103                           	opt stack 0
+   104  000001                     	ds	17
+   105  000012                     _table1:
+   106                           	opt stack 0
+   107  000012                     	ds	4
+   108                           tblptru	equ	0xFF8
+   109                           tblptrh	equ	0xFF7
+   110                           tblptrl	equ	0xFF6
+   111                           tablat	equ	0xFF5
+   112                           postinc0	equ	0xFEE
+   113                           postdec1	equ	0xFE5
+   114                           fsr1l	equ	0xFE1
+   115                           indf2	equ	0xFDF
+   116                           fsr2h	equ	0xFDA
+   117                           fsr2l	equ	0xFD9
+   118                           status	equ	0xFD8
+   119                           
+   120                           	psect	cstackCOMRAM
+   121  000016                     __pcstackCOMRAM:
+   122                           	opt stack 0
+   123  000016                     ?_delay1:
+   124                           	opt stack 0
+   125  000016                     ?_sigma_portint:
+   126                           	opt stack 0
+   127  000016                     ??_sigma_portint:
+   128                           	opt stack 0
+   129  000016                     ?_main:
+   130                           	opt stack 0
+   131  000016                     delay1@x:
+   132                           	opt stack 0
+   133                           
+   134                           ; 2 bytes @ 0x0
+   135  000016                     	ds	2
+   136  000018                     ??_delay1:
+   137                           	opt stack 0
+   138  000018                     delay1@i:
+   139                           	opt stack 0
+   140                           
+   141                           ; 2 bytes @ 0x2
+   142  000018                     	ds	2
+   143  00001A                     delay1@j:
+   144                           	opt stack 0
+   145                           
+   146                           ; 2 bytes @ 0x4
+   147  00001A                     	ds	2
+   148  00001C                     ?_show:
+   149                           	opt stack 0
+   150  00001C                     show@show_bit:
+   151                           	opt stack 0
+   152                           
+   153                           ; 2 bytes @ 0x6
+   154  00001C                     	ds	2
+   155  00001E                     show@show_code:
+   156                           	opt stack 0
+   157                           
+   158                           ; 2 bytes @ 0x8
+   159  00001E                     	ds	2
+   160  000020                     ??_show:
+   161                           	opt stack 0
+   162  000020                     ??_main:
+   163                           	opt stack 0
+   164  000020                     main@n:
+   165                           	opt stack 0
+   166                           
+   167                           ; 2 bytes @ 0xA
+   168  000020                     	ds	2
+   169  000022                     main@k:
+   170                           	opt stack 0
+   171                           
+   172                           ; 2 bytes @ 0xC
+   173  000022                     	ds	2
+   174  000024                     main@i:
+   175                           	opt stack 0
+   176                           
+   177                           ; 2 bytes @ 0xE
+   178  000024                     	ds	2
+   179                           tblptru	equ	0xFF8
+   180                           tblptrh	equ	0xFF7
+   181                           tblptrl	equ	0xFF6
+   182                           tablat	equ	0xFF5
+   183                           postinc0	equ	0xFEE
+   184                           postdec1	equ	0xFE5
+   185                           fsr1l	equ	0xFE1
+   186                           indf2	equ	0xFDF
+   187                           fsr2h	equ	0xFDA
+   188                           fsr2l	equ	0xFD9
+   189                           status	equ	0xFD8
+   190                           
+   191 ;;
+   192 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   193 ;;
+   194 ;; *************** function _main *****************
+   195 ;; Defined at:
+   196 ;;		line 25 in file "E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c"
+   197 ;; Parameters:    Size  Location     Type
+   198 ;;		None
+   199 ;; Auto vars:     Size  Location     Type
+   200 ;;  i               2   14[COMRAM] unsigned int 
+   201 ;;  k               2   12[COMRAM] unsigned int 
+   202 ;;  n               2   10[COMRAM] unsigned int 
+   203 ;; Return value:  Size  Location     Type
+   204 ;;		None               void
+   205 ;; Registers used:
+   206 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   207 ;; Tracked objects:
+   208 ;;		On entry : 0/0
+   209 ;;		On exit  : 0/0
+   210 ;;		Unchanged: FFFFFFFF/0
+   211 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   212 ;;      Params:         0       0       0       0       0       0       0
+   213 ;;      Locals:         6       0       0       0       0       0       0
+   214 ;;      Temps:          0       0       0       0       0       0       0
+   215 ;;      Totals:         6       0       0       0       0       0       0
+   216 ;;Total ram usage:        6 bytes
+   217 ;; Hardware stack levels required when called:    2
+   218 ;; This function calls:
+   219 ;;		_sigma_portint
+   220 ;;		_show
+   221 ;;		_delay1
+   222 ;; This function is called by:
+   223 ;;		Startup code after reset
+   224 ;; This function uses a non-reentrant model
+   225 ;;
+   226                           
+   227                           	psect	text0
+   228  007F60                     __ptext0:
+   229                           	opt stack 0
+   230  007F60                     _main:
+   231                           	opt stack 29
+   232                           
+   233                           ;sigama.c: 27: unsigned int n=0Xd6,k=0,i=0; PORTB=0XFF;
+   234  007F60  6A21               	clrf	main@n+1,c
+   235  007F62  0ED6               	movlw	214
+   236  007F64  6E20               	movwf	main@n,c
+   237  007F66  6A22               	clrf	main@k,c
+   238  007F68  6A23               	clrf	main@k+1,c
+   239  007F6A  6A24               	clrf	main@i,c
+   240  007F6C  6A25               	clrf	main@i+1,c
+   241  007F6E  6881               	setf	3969,c	;volatile
+   242                           
+   243                           ;sigama.c: 28: sigma_portint();
+   244  007F70  EC69  F03F         	call	_sigma_portint	;wreg free
+   245  007F74                     l647:
+   246                           
+   247                           ;sigama.c: 30: {k++;
+   248  007F74  4A22               	infsnz	main@k,f,c
+   249  007F76  2A23               	incf	main@k+1,f,c
+   250                           
+   251                           ;sigama.c: 31: show(0,i);
+   252  007F78  0E00               	movlw	0
+   253  007F7A  6A1D               	clrf	?_show+1,c
+   254  007F7C  6A1C               	clrf	?_show,c
+   255  007F7E  C024  F01E         	movff	main@i,?_show+2
+   256  007F82  C025  F01F         	movff	main@i+1,?_show+3
+   257  007F86  EC77  F03F         	call	_show	;wreg free
+   258                           
+   259                           ;sigama.c: 32: show(1,i);
+   260  007F8A  6A1D               	clrf	?_show+1,c
+   261  007F8C  0E01               	movlw	1
+   262  007F8E  6E1C               	movwf	?_show,c
+   263  007F90  C024  F01E         	movff	main@i,?_show+2
+   264  007F94  C025  F01F         	movff	main@i+1,?_show+3
+   265  007F98  EC77  F03F         	call	_show	;wreg free
+   266                           
+   267                           ;sigama.c: 33: show(2,i);
+   268  007F9C  6A1D               	clrf	?_show+1,c
+   269  007F9E  0E02               	movlw	2
+   270  007FA0  6E1C               	movwf	?_show,c
+   271  007FA2  C024  F01E         	movff	main@i,?_show+2
+   272  007FA6  C025  F01F         	movff	main@i+1,?_show+3
+   273  007FAA  EC77  F03F         	call	_show	;wreg free
+   274                           
+   275                           ;sigama.c: 34: show(3,i);
+   276  007FAE  6A1D               	clrf	?_show+1,c
+   277  007FB0  0E03               	movlw	3
+   278  007FB2  6E1C               	movwf	?_show,c
+   279  007FB4  C024  F01E         	movff	main@i,?_show+2
+   280  007FB8  C025  F01F         	movff	main@i+1,?_show+3
+   281  007FBC  EC77  F03F         	call	_show	;wreg free
+   282                           
+   283                           ;sigama.c: 37: if(k==20 | k==40){i++;if(i==17){i=0;}}
+   284  007FC0  5022               	movf	main@k,w,c
+   285  007FC2  0A14               	xorlw	20
+   286  007FC4  1023               	iorwf	main@k+1,w,c
+   287  007FC6  E004               	bz	l661
+   288  007FC8  5022               	movf	main@k,w,c
+   289  007FCA  0A28               	xorlw	40
+   290  007FCC  1023               	iorwf	main@k+1,w,c
+   291  007FCE  E108               	bnz	l667
+   292  007FD0                     l661:
+   293  007FD0  4A24               	infsnz	main@i,f,c
+   294  007FD2  2A25               	incf	main@i+1,f,c
+   295  007FD4  5024               	movf	main@i,w,c
+   296  007FD6  0A11               	xorlw	17
+   297  007FD8  1025               	iorwf	main@i+1,w,c
+   298  007FDA  E102               	bnz	l667
+   299  007FDC  6A24               	clrf	main@i,c
+   300  007FDE  6A25               	clrf	main@i+1,c
+   301  007FE0                     l667:
+   302                           
+   303                           ;sigama.c: 39: if(k==50){k=0,n=~n; PORTA=n;}
+   304  007FE0  5022               	movf	main@k,w,c
+   305  007FE2  0A32               	xorlw	50
+   306  007FE4  1023               	iorwf	main@k+1,w,c
+   307  007FE6  E104               	bnz	l673
+   308  007FE8  6A22               	clrf	main@k,c
+   309  007FEA  6A23               	clrf	main@k+1,c
+   310  007FEC  1E20               	comf	main@n,f,c
+   311  007FEE  1E21               	comf	main@n+1,f,c
+   312  007FF0                     l673:
+   313  007FF0  C020  FF80         	movff	main@n,3968	;volatile
+   314                           
+   315                           ;sigama.c: 41: delay1(10);
+   316  007FF4  6A17               	clrf	?_delay1+1,c
+   317  007FF6  0E0A               	movlw	10
+   318  007FF8  6E16               	movwf	?_delay1,c
+   319  007FFA  EC9B  F03F         	call	_delay1	;wreg free
+   320  007FFE  D7BA               	goto	l647
+   321                           tblptru	equ	0xFF8
+   322                           tblptrh	equ	0xFF7
+   323                           tblptrl	equ	0xFF6
+   324                           tablat	equ	0xFF5
+   325                           postinc0	equ	0xFEE
+   326                           postdec1	equ	0xFE5
+   327                           fsr1l	equ	0xFE1
+   328                           indf2	equ	0xFDF
+   329                           fsr2h	equ	0xFDA
+   330                           fsr2l	equ	0xFD9
+   331                           status	equ	0xFD8
+   332                           
+   333 ;; *************** function _sigma_portint *****************
+   334 ;; Defined at:
+   335 ;;		line 13 in file "E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c"
+   336 ;; Parameters:    Size  Location     Type
+   337 ;;		None
+   338 ;; Auto vars:     Size  Location     Type
+   339 ;;		None
+   340 ;; Return value:  Size  Location     Type
+   341 ;;		None               void
+   342 ;; Registers used:
+   343 ;;		None
+   344 ;; Tracked objects:
+   345 ;;		On entry : 0/0
+   346 ;;		On exit  : 0/0
+   347 ;;		Unchanged: FFFFFFFF/0
+   348 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   349 ;;      Params:         0       0       0       0       0       0       0
+   350 ;;      Locals:         0       0       0       0       0       0       0
+   351 ;;      Temps:          0       0       0       0       0       0       0
+   352 ;;      Totals:         0       0       0       0       0       0       0
+   353 ;;Total ram usage:        0 bytes
+   354 ;; Hardware stack levels used:    1
+   355 ;; This function calls:
+   356 ;;		Nothing
+   357 ;; This function is called by:
+   358 ;;		_main
+   359 ;; This function uses a non-reentrant model
+   360 ;;
+   361                           
+   362                           	psect	text1
+   363  007ED2                     __ptext1:
+   364                           	opt stack 0
+   365  007ED2                     __end_of_main:
+   366                           	opt stack 0
+   367  007ED2                     _sigma_portint:
+   368                           	opt stack 30
+   369                           
+   370                           ;sigama.c: 14: TRISA=0X00;
+   371  007ED2  6A92               	clrf	3986,c	;volatile
+   372                           
+   373                           ;sigama.c: 15: TRISB=0X00;
+   374  007ED4  6A93               	clrf	3987,c	;volatile
+   375  007ED6  0012               	return	
+   376  007ED8                     __end_of_sigma_portint:
+   377                           	opt stack 0
+   378                           tblptru	equ	0xFF8
+   379                           tblptrh	equ	0xFF7
+   380                           tblptrl	equ	0xFF6
+   381                           tablat	equ	0xFF5
+   382                           postinc0	equ	0xFEE
+   383                           postdec1	equ	0xFE5
+   384                           fsr1l	equ	0xFE1
+   385                           indf2	equ	0xFDF
+   386                           fsr2h	equ	0xFDA
+   387                           fsr2l	equ	0xFD9
+   388                           status	equ	0xFD8
+   389                           
+   390 ;; *************** function _show *****************
+   391 ;; Defined at:
+   392 ;;		line 18 in file "E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c"
+   393 ;; Parameters:    Size  Location     Type
+   394 ;;  show_bit        2    6[COMRAM] int 
+   395 ;;  show_code       2    8[COMRAM] int 
+   396 ;; Auto vars:     Size  Location     Type
+   397 ;;		None
+   398 ;; Return value:  Size  Location     Type
+   399 ;;		None               void
+   400 ;; Registers used:
+   401 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   402 ;; Tracked objects:
+   403 ;;		On entry : 0/0
+   404 ;;		On exit  : 0/0
+   405 ;;		Unchanged: FFFFFFFF/0
+   406 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   407 ;;      Params:         4       0       0       0       0       0       0
+   408 ;;      Locals:         0       0       0       0       0       0       0
+   409 ;;      Temps:          0       0       0       0       0       0       0
+   410 ;;      Totals:         4       0       0       0       0       0       0
+   411 ;;Total ram usage:        4 bytes
+   412 ;; Hardware stack levels used:    1
+   413 ;; Hardware stack levels required when called:    1
+   414 ;; This function calls:
+   415 ;;		_delay1
+   416 ;; This function is called by:
+   417 ;;		_main
+   418 ;; This function uses a non-reentrant model
+   419 ;;
+   420                           
+   421                           	psect	text2
+   422  007EEE                     __ptext2:
+   423                           	opt stack 0
+   424  007EEE                     _show:
+   425                           	opt stack 29
+   426                           
+   427                           ;sigama.c: 19: PORTA=table1[show_bit];
+   428  007EEE  501C               	movf	show@show_bit,w,c
+   429  007EF0  0F12               	addlw	low _table1
+   430  007EF2  6ED9               	movwf	fsr2l,c
+   431  007EF4  6ADA               	clrf	fsr2h,c
+   432  007EF6  50DF               	movf	indf2,w,c
+   433  007EF8  6E80               	movwf	3968,c	;volatile
+   434                           
+   435                           ;sigama.c: 20: PORTB=table0[show_code];
+   436  007EFA  501E               	movf	show@show_code,w,c
+   437  007EFC  0F01               	addlw	low _table0
+   438  007EFE  6ED9               	movwf	fsr2l,c
+   439  007F00  6ADA               	clrf	fsr2h,c
+   440  007F02  50DF               	movf	indf2,w,c
+   441  007F04  6E81               	movwf	3969,c	;volatile
+   442                           
+   443                           ;sigama.c: 21: delay1(5);
+   444  007F06  6A17               	clrf	?_delay1+1,c
+   445  007F08  0E05               	movlw	5
+   446  007F0A  6E16               	movwf	?_delay1,c
+   447  007F0C  EF9B  F03F         	goto	_delay1	;wreg free
+   448  007F10                     __end_of_show:
+   449                           	opt stack 0
+   450                           tblptru	equ	0xFF8
+   451                           tblptrh	equ	0xFF7
+   452                           tblptrl	equ	0xFF6
+   453                           tablat	equ	0xFF5
+   454                           postinc0	equ	0xFEE
+   455                           postdec1	equ	0xFE5
+   456                           fsr1l	equ	0xFE1
+   457                           indf2	equ	0xFDF
+   458                           fsr2h	equ	0xFDA
+   459                           fsr2l	equ	0xFD9
+   460                           status	equ	0xFD8
+   461                           
+   462 ;; *************** function _delay1 *****************
+   463 ;; Defined at:
+   464 ;;		line 7 in file "E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c"
+   465 ;; Parameters:    Size  Location     Type
+   466 ;;  x               2    0[COMRAM] unsigned int 
+   467 ;; Auto vars:     Size  Location     Type
+   468 ;;  j               2    4[COMRAM] unsigned int 
+   469 ;;  i               2    2[COMRAM] unsigned int 
+   470 ;; Return value:  Size  Location     Type
+   471 ;;		None               void
+   472 ;; Registers used:
+   473 ;;		wreg, status,2, status,0
+   474 ;; Tracked objects:
+   475 ;;		On entry : 0/0
+   476 ;;		On exit  : 0/0
+   477 ;;		Unchanged: FFFFFFFF/0
+   478 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   479 ;;      Params:         2       0       0       0       0       0       0
+   480 ;;      Locals:         4       0       0       0       0       0       0
+   481 ;;      Temps:          0       0       0       0       0       0       0
+   482 ;;      Totals:         6       0       0       0       0       0       0
+   483 ;;Total ram usage:        6 bytes
+   484 ;; Hardware stack levels used:    1
+   485 ;; This function calls:
+   486 ;;		Nothing
+   487 ;; This function is called by:
+   488 ;;		_show
+   489 ;;		_main
+   490 ;; This function uses a non-reentrant model
+   491 ;;
+   492                           
+   493                           	psect	text3
+   494  007F36                     __ptext3:
+   495                           	opt stack 0
+   496  007F36                     _delay1:
+   497                           	opt stack 30
+   498                           
+   499                           ;sigama.c: 8: unsigned int i,j;
+   500                           ;sigama.c: 9: for(i=0;i<x;i++)
+   501  007F36  6A18               	clrf	delay1@i,c
+   502  007F38  6A19               	clrf	delay1@i+1,c
+   503  007F3A  D00B               	goto	l629
+   504  007F3C                     l16:
+   505                           
+   506                           ;sigama.c: 10: for(j=0;j<100;j++);
+   507  007F3C  6A1A               	clrf	delay1@j,c
+   508  007F3E  6A1B               	clrf	delay1@j+1,c
+   509  007F40                     l623:
+   510  007F40  4A1A               	infsnz	delay1@j,f,c
+   511  007F42  2A1B               	incf	delay1@j+1,f,c
+   512  007F44  0E64               	movlw	100
+   513  007F46  5C1A               	subwf	delay1@j,w,c
+   514  007F48  0E00               	movlw	0
+   515  007F4A  581B               	subwfb	delay1@j+1,w,c
+   516  007F4C  E3F9               	bnc	l623
+   517  007F4E  4A18               	infsnz	delay1@i,f,c
+   518  007F50  2A19               	incf	delay1@i+1,f,c
+   519  007F52                     l629:
+   520  007F52  5016               	movf	delay1@x,w,c
+   521  007F54  5C18               	subwf	delay1@i,w,c
+   522  007F56  5017               	movf	delay1@x+1,w,c
+   523  007F58  5819               	subwfb	delay1@i+1,w,c
+   524  007F5A  B0D8               	btfsc	status,0,c
+   525  007F5C  0012               	return	
+   526  007F5E  D7EE               	goto	l16
+   527  007F60                     __end_of_delay1:
+   528                           	opt stack 0
+   529  0000                     tblptru	equ	0xFF8
+   530                           tblptrh	equ	0xFF7
+   531                           tblptrl	equ	0xFF6
+   532                           tablat	equ	0xFF5
+   533                           postinc0	equ	0xFEE
+   534                           postdec1	equ	0xFE5
+   535                           fsr1l	equ	0xFE1
+   536                           indf2	equ	0xFDF
+   537                           fsr2h	equ	0xFDA
+   538                           fsr2l	equ	0xFD9
+   539                           status	equ	0xFD8
+   540                           tblptru	equ	0xFF8
+   541                           tblptrh	equ	0xFF7
+   542                           tblptrl	equ	0xFF6
+   543                           tablat	equ	0xFF5
+   544                           postinc0	equ	0xFEE
+   545                           postdec1	equ	0xFE5
+   546                           fsr1l	equ	0xFE1
+   547                           indf2	equ	0xFDF
+   548                           fsr2h	equ	0xFDA
+   549                           fsr2l	equ	0xFD9
+   550                           status	equ	0xFD8
+   551                           
+   552                           	psect	text4
+   553  000000                     __ptext4:
+   554                           	opt stack 0
+   555                           tblptru	equ	0xFF8
+   556                           tblptrh	equ	0xFF7
+   557                           tblptrl	equ	0xFF6
+   558                           tablat	equ	0xFF5
+   559                           postinc0	equ	0xFEE
+   560                           postdec1	equ	0xFE5
+   561                           fsr1l	equ	0xFE1
+   562                           indf2	equ	0xFDF
+   563                           fsr2h	equ	0xFDA
+   564                           fsr2l	equ	0xFD9
+   565                           status	equ	0xFD8
+   566                           
+   567                           	psect	rparam
+   568  0000                     tblptru	equ	0xFF8
+   569                           tblptrh	equ	0xFF7
+   570                           tblptrl	equ	0xFF6
+   571                           tablat	equ	0xFF5
+   572                           postinc0	equ	0xFEE
+   573                           postdec1	equ	0xFE5
+   574                           fsr1l	equ	0xFE1
+   575                           indf2	equ	0xFDF
+   576                           fsr2h	equ	0xFDA
+   577                           fsr2l	equ	0xFD9
+   578                           status	equ	0xFD8
+   579                           tblptru	equ	0xFF8
+   580                           tblptrh	equ	0xFF7
+   581                           tblptrl	equ	0xFF6
+   582                           tablat	equ	0xFF5
+   583                           postinc0	equ	0xFEE
+   584                           postdec1	equ	0xFE5
+   585                           fsr1l	equ	0xFE1
+   586                           indf2	equ	0xFDF
+   587                           fsr2h	equ	0xFDA
+   588                           fsr2l	equ	0xFD9
+   589                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        21
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM          127     16      37
+    BANK0           128      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_show
+    _show->_delay1
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 6     6      0     300
+                                             10 COMRAM     6     6      0
+                      _sigma_portint
+                               _show
+                             _delay1
+ ---------------------------------------------------------------------------------
+ (1) _sigma_portint                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _show                                                 4     0      4      90
+                                              6 COMRAM     4     0      4
+                             _delay1
+ ---------------------------------------------------------------------------------
+ (1) _delay1                                               6     4      2      60
+                                              0 COMRAM     6     4      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _sigma_portint
+   _show
+     _delay1
+   _delay1
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FF      0       0      17        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      16        0.0%
+BANK5              100      0       0      14        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            80      0       0       4        0.0%
+BANK0               80      0       0       5        0.0%
+BITCOMRAM           7F      0       0       0        0.0%
+COMRAM              7F     10      25       1       29.1%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+STACK                0      0       2       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      25      15        0.0%
+DATA                 0      0      27       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+HI-TECH Software PICC-18 Macro Assembler V9.80 build 11162 
+Symbol Table                                                                                   Mon Dec 26 15:31:33 2011
+
+                    l16 7F3C                     l623 7F40                     l629 7F52  
+                   l661 7FD0                     l647 7F74                     l673 7FF0  
+                   l667 7FE0                    _main 7F60                    _show 7EEE  
+                  fsr2h 000FDA                    fsr1l 000FE1                    indf2 000FDF  
+                  fsr2l 000FD9                    start 0000                   ?_main 0016  
+                 ?_show 001C                   _PORTA 000F80                   _PORTB 000F81  
+                 _TRISA 000F92                   _TRISB 000F93                   main@i 0024  
+                 main@k 0022                   main@n 0020                   tablat 000FF5  
+                 status 000FD8            __end_of_main 7ED2            __end_of_show 7F10  
+                ??_main 0020                  ??_show 0020           __activetblptr 000000  
+                _delay1 7F36                  _table0 0001                  _table1 0012  
+          __pdataCOMRAM 0001                  tblptrh 000FF7                  tblptrl 000FF6  
+                tblptru 000FF8   __end_of_sigma_portint 7ED8              __accesstop 0080  
+        __pcstackCOMRAM 0016                 ?_delay1 0016                 __Hparam 0000  
+               __Lparam 0000         __size_of_delay1 002A                 __pcinit 7F10  
+               __ramtop 0600                 __ptext0 7F60                 __ptext1 7ED2  
+               __ptext2 7EEE                 __ptext3 7F36                 __ptext4 0000  
+               delay1@i 0018                 delay1@j 001A                 delay1@x 0016  
+  end_of_initialization 7F30                 postdec1 000FE5                 postinc0 000FEE  
+        __end_of_delay1 7F60           __pidataCOMRAM 7ED9     start_initialization 7F10  
+              ??_delay1 0018  __size_of_sigma_portint 0006           _sigma_portint 7ED2  
+             copy_data0 7F24          ?_sigma_portint 0016                __Hrparam 0000  
+              __Lrparam 0000           __size_of_main FF72           __size_of_show 0022  
+         show@show_code 001E         ??_sigma_portint 0016            show@show_bit 001C  

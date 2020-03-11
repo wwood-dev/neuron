@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Feb 22 19:01:03 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : display
+Top-level Entity Name : display
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 150 / 10,320 ( 1 % )
+    Total combinational functions : 149 / 10,320 ( 1 % )
+    Dedicated logic registers : 85 / 10,320 ( 1 % )
+Total registers : 85
+Total pins : 13 / 180 ( 7 % )
+Total virtual pins : 0
+Total memory bits : 0 / 423,936 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

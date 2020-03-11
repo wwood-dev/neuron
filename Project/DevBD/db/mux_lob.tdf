@@ -1,0 +1,76 @@
+--lpm_mux CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" LPM_SIZE=2 LPM_WIDTH=19 LPM_WIDTHS=1 data result sel
+--VERSION_BEGIN 14.1 cbx_lpm_mux 2015:01:19:16:14:34:SJ cbx_mgl 2015:01:19:16:18:34:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, the Altera Quartus II License Agreement,
+--  the Altera MegaCore Function License Agreement, or other 
+--  applicable license agreement, including, without limitation, 
+--  that your use is for the sole purpose of programming logic 
+--  devices manufactured by Altera and sold by Altera or its 
+--  authorized distributors.  Please refer to the applicable 
+--  agreement for further details.
+
+
+
+--synthesis_resources = lut 19 
+SUBDESIGN mux_lob
+( 
+	data[37..0]	:	input;
+	result[18..0]	:	output;
+	sel[0..0]	:	input;
+) 
+VARIABLE 
+	result_node[18..0]	: WIRE;
+	sel_node[0..0]	: WIRE;
+	w_data342w[1..0]	: WIRE;
+	w_data356w[1..0]	: WIRE;
+	w_data368w[1..0]	: WIRE;
+	w_data380w[1..0]	: WIRE;
+	w_data392w[1..0]	: WIRE;
+	w_data404w[1..0]	: WIRE;
+	w_data416w[1..0]	: WIRE;
+	w_data428w[1..0]	: WIRE;
+	w_data440w[1..0]	: WIRE;
+	w_data452w[1..0]	: WIRE;
+	w_data464w[1..0]	: WIRE;
+	w_data476w[1..0]	: WIRE;
+	w_data488w[1..0]	: WIRE;
+	w_data500w[1..0]	: WIRE;
+	w_data512w[1..0]	: WIRE;
+	w_data524w[1..0]	: WIRE;
+	w_data536w[1..0]	: WIRE;
+	w_data548w[1..0]	: WIRE;
+	w_data560w[1..0]	: WIRE;
+
+BEGIN 
+	result[] = result_node[];
+	result_node[] = ( ((sel_node[] & w_data560w[1..1]) # ((! sel_node[]) & w_data560w[0..0])), ((sel_node[] & w_data548w[1..1]) # ((! sel_node[]) & w_data548w[0..0])), ((sel_node[] & w_data536w[1..1]) # ((! sel_node[]) & w_data536w[0..0])), ((sel_node[] & w_data524w[1..1]) # ((! sel_node[]) & w_data524w[0..0])), ((sel_node[] & w_data512w[1..1]) # ((! sel_node[]) & w_data512w[0..0])), ((sel_node[] & w_data500w[1..1]) # ((! sel_node[]) & w_data500w[0..0])), ((sel_node[] & w_data488w[1..1]) # ((! sel_node[]) & w_data488w[0..0])), ((sel_node[] & w_data476w[1..1]) # ((! sel_node[]) & w_data476w[0..0])), ((sel_node[] & w_data464w[1..1]) # ((! sel_node[]) & w_data464w[0..0])), ((sel_node[] & w_data452w[1..1]) # ((! sel_node[]) & w_data452w[0..0])), ((sel_node[] & w_data440w[1..1]) # ((! sel_node[]) & w_data440w[0..0])), ((sel_node[] & w_data428w[1..1]) # ((! sel_node[]) & w_data428w[0..0])), ((sel_node[] & w_data416w[1..1]) # ((! sel_node[]) & w_data416w[0..0])), ((sel_node[] & w_data404w[1..1]) # ((! sel_node[]) & w_data404w[0..0])), ((sel_node[] & w_data392w[1..1]) # ((! sel_node[]) & w_data392w[0..0])), ((sel_node[] & w_data380w[1..1]) # ((! sel_node[]) & w_data380w[0..0])), ((sel_node[] & w_data368w[1..1]) # ((! sel_node[]) & w_data368w[0..0])), ((sel_node[] & w_data356w[1..1]) # ((! sel_node[]) & w_data356w[0..0])), ((sel_node[] & w_data342w[1..1]) # ((! sel_node[]) & w_data342w[0..0])));
+	sel_node[] = ( sel[0..0]);
+	w_data342w[] = ( data[19..19], data[0..0]);
+	w_data356w[] = ( data[20..20], data[1..1]);
+	w_data368w[] = ( data[21..21], data[2..2]);
+	w_data380w[] = ( data[22..22], data[3..3]);
+	w_data392w[] = ( data[23..23], data[4..4]);
+	w_data404w[] = ( data[24..24], data[5..5]);
+	w_data416w[] = ( data[25..25], data[6..6]);
+	w_data428w[] = ( data[26..26], data[7..7]);
+	w_data440w[] = ( data[27..27], data[8..8]);
+	w_data452w[] = ( data[28..28], data[9..9]);
+	w_data464w[] = ( data[29..29], data[10..10]);
+	w_data476w[] = ( data[30..30], data[11..11]);
+	w_data488w[] = ( data[31..31], data[12..12]);
+	w_data500w[] = ( data[32..32], data[13..13]);
+	w_data512w[] = ( data[33..33], data[14..14]);
+	w_data524w[] = ( data[34..34], data[15..15]);
+	w_data536w[] = ( data[35..35], data[16..16]);
+	w_data548w[] = ( data[36..36], data[17..17]);
+	w_data560w[] = ( data[37..37], data[18..18]);
+END;
+--VALID FILE

@@ -1,0 +1,101 @@
+module SignalDistributor(
+input wire Clock,
+input wire [7:0] Data,
+input wire [6:0] usedw,
+inout wire [15:0] DataToContacts,
+output reg [7:0] DataOut
+output reg RdReq,
+output reg WrReq);
+
+reg [15:0] DataToContactsR, DataToContactsCol;
+reg EnaOutputToContacts;
+initial EnaOutputToContacts<=0;
+
+assign DataToContacts=EnaOutputToContacts?DataToContactsR:15'bz;
+
+reg [7:0] State;
+initial State<=0;
+
+always @(posedge Clock)
+  case (State)
+  0:begin
+    if ((Data == 1)&&(usedw==3)) //Вывод на контакты принятых данных, отправки подтверждения
+	   begin
+		State<=1;
+		RdReq<=1;
+		end
+	 if (Data == 32) //Установка Z-состояния, отправка сигналов с контактов
+	   begin
+		State<=32;
+		EnaOutputToContacts<=0;
+		end 
+	 if ((Data == 65)&&(usedw==3)) //Вывод принятых данных, установка Z-состояния, отправка сигналов с контактов
+	   begin
+		State<=65;
+		RdReq<=1;
+		end
+	 if ((Data == 129)&&(usedw==3)) //Вывод на контакты принятых данных, без отправки подтверждения
+	   begin
+		State<=129;
+		RdReq<=1;
+		end	 
+	 if ((Data == 160)&&(usedw==2)) //Передача на компьютер столько кадров с выходных данных, сколько указано во 2 байте
+	   begin
+		State<=160;
+		RdReq<=1;
+		end	 
+	 if (Data == 255) //Проверка платы
+	   State<=254;
+    end
+	 
+  1:begin //Вывод на контакты принятых данных, отправки подтверждения
+    DataToContactsCol[7:0]<=Data;
+    State<=2;
+    end
+  2:begin
+    DataToContactsCol[15:8]<=Data;
+    State<=3;
+	 RdReq<=0;
+    end
+  3:begin
+    State<=4;
+	 DataToContactsR<=DataToContactsCol;
+	 end
+  4:begin
+    State<=5;
+	 EnaOutputToContacts<=1;
+	 DataOut<=1;
+	 WrReq<=1;
+	 end
+  5:begin
+    State<=0;
+    WrReq<=0;
+	 end
+	 
+ 32:begin //Установка Z-состояния, отправка сигналов с контактов
+    DataOut<=DataToContacts[7:0];
+	 WrReq<=1;
+	 State<=33;
+	 end
+ 33:begin
+    DataOut<=DataToContacts[16:8];
+    State<=34;
+    end 
+ 34:begin
+    WrReq<=0;
+    State<=0;
+    end
+	 
+254:begin 	 
+	 WrReq<=1;
+	 DataOut<=255;
+	 State<=255;
+	 end
+255:begin
+    WrReq<=0;
+	 State<=0;
+	 end
+	 
+  endcase
+endmodule
+	 

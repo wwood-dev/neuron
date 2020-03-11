@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+delay1	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	6;"	f	line:6	signature:( unsigned int x)
+i	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	27;"	l	line:27
+i	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	8;"	l	line:8
+j	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	8;"	l	line:8
+k	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	27;"	l	line:27
+main	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	24;"	f	line:24
+n	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	27;"	l	line:27
+show	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	17;"	f	line:17
+sigma_portint	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	12;"	f	line:12
+table0	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	3;"	v	line:3
+table1	E:\Program\PRGPIC\testPIC18F4520\sigma\sigama.c	5;"	v	line:5

@@ -1,0 +1,369 @@
+
+
+HI-TECH Software PIC18 PRO Macro Assembler V9.80 build 11162 
+                                                                                               Fri Dec 30 19:07:17 2011
+
+HI-TECH Software Omniscient Code Generator (PRO mode) build 11162
+     1                           	processor	18F4520
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	pm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    11                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    12                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    13                           	psect	pa_nodes,global,class=CODE,delta=1
+    14  0000                     _ADCON1	set	4033
+    15  0000                     _TRISB	set	3987
+    16  0000                     _RE2	set	31778
+    17  0000                     _TRISE2	set	31922
+    18                           status	equ	0xFD8
+    19                           
+    20                           ; 0 bytes @ 0x3
+    21 ;;
+    22 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    23 ;;
+    24 ;; *************** function _main *****************
+    25 ;; Defined at:
+    26 ;;		line 40 in file "E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C"
+    27 ;; Parameters:    Size  Location     Type
+    28 ;;		None
+    29 ;; Auto vars:     Size  Location     Type
+    30 ;;		None
+    31 ;; Return value:  Size  Location     Type
+    32 ;;		None               void
+    33 ;; Registers used:
+    34 ;;		wreg, status,2, status,0, cstack
+    35 ;; Tracked objects:
+    36 ;;		On entry : 0/0
+    37 ;;		On exit  : 0/0
+    38 ;;		Unchanged: FFFFFFFF/0
+    39 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    40 ;;      Params:         0       0       0       0       0       0       0
+    41 ;;      Locals:         0       0       0       0       0       0       0
+    42 ;;      Temps:          0       0       0       0       0       0       0
+    43 ;;      Totals:         0       0       0       0       0       0       0
+    44 ;;Total ram usage:        0 bytes
+    45 ;; Hardware stack levels required when called:    2
+    46 ;; This function calls:
+    47 ;;		_read_from_ft245
+    48 ;; This function is called by:
+    49 ;;		Startup code after reset
+    50 ;; This function uses a non-reentrant model
+    51 ;;
+    52                           
+    53                           	psect	text0
+    54  007FBA                     __ptext0:
+    55                           	opt stack 0
+    56  007FBA                     _main:
+    57                           	opt stack 29
+    58  007FBA  68C1               	setf	4033,c	;volatile
+    59                           
+    60                           ;FT245.C: 41: TRISB=0XFF;
+    61  007FBC  6893               	setf	3987,c	;volatile
+    62                           
+    63                           ;FT245.C: 42: TRISE2=0;
+    64  007FBE  9496               	bcf	3990,2,c	;volatile
+    65  007FC0                     l634:
+    66                           
+    67                           ;FT245.C: 44: {
+    68                           ;FT245.C: 45: read_from_ft245();
+    69  007FC0  ECE3  F03F         	call	_read_from_ft245	;wreg free
+    70  007FC4  D7FD               	goto	l634
+    71                           status	equ	0xFD8
+    72                           
+    73                           ; #config settings
+    74                           
+    75                           	psect	cinit
+    76  007FB4                     __pcinit:
+    77                           	opt stack 0
+    78  007FB4                     start_initialization:
+    79                           	opt stack 0
+    80  007FB4                     end_of_initialization:
+    81                           	opt stack 0
+    82  007FB4  0100               	movlb	0
+    83  007FB6  EFDD  F03F         	goto	_main	;jump to C main() function
+    84                           status	equ	0xFD8
+    85                           
+    86                           	psect	cstackCOMRAM
+    87  000001                     __pcstackCOMRAM:
+    88                           	opt stack 0
+    89  000001                     ?_delay50us:
+    90                           	opt stack 0
+    91  000001                     ?_read_from_ft245:
+    92                           	opt stack 0
+    93  000001                     ?_main:
+    94                           	opt stack 0
+    95  000001                     delay50us@t:
+    96                           	opt stack 0
+    97                           
+    98                           ; 2 bytes @ 0x0
+    99  000001                     	ds	2
+   100  000003                     ??_delay50us:
+   101                           	opt stack 0
+   102  000003                     delay50us@j:
+   103                           	opt stack 0
+   104                           
+   105                           ; 1 bytes @ 0x2
+   106  000003                     	ds	1
+   107  000004                     ??_read_from_ft245:
+   108                           	opt stack 0
+   109  000004                     ??_main:
+   110                           	opt stack 0
+   111                           status	equ	0xFD8
+   112                           
+   113 ;; *************** function _read_from_ft245 *****************
+   114 ;; Defined at:
+   115 ;;		line 32 in file "E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C"
+   116 ;; Parameters:    Size  Location     Type
+   117 ;;		None
+   118 ;; Auto vars:     Size  Location     Type
+   119 ;;		None
+   120 ;; Return value:  Size  Location     Type
+   121 ;;		None               void
+   122 ;; Registers used:
+   123 ;;		wreg, status,2, status,0, cstack
+   124 ;; Tracked objects:
+   125 ;;		On entry : 0/0
+   126 ;;		On exit  : 0/0
+   127 ;;		Unchanged: FFFFFFFF/0
+   128 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   129 ;;      Params:         0       0       0       0       0       0       0
+   130 ;;      Locals:         0       0       0       0       0       0       0
+   131 ;;      Temps:          0       0       0       0       0       0       0
+   132 ;;      Totals:         0       0       0       0       0       0       0
+   133 ;;Total ram usage:        0 bytes
+   134 ;; Hardware stack levels used:    1
+   135 ;; Hardware stack levels required when called:    1
+   136 ;; This function calls:
+   137 ;;		_delay50us
+   138 ;; This function is called by:
+   139 ;;		_main
+   140 ;; This function uses a non-reentrant model
+   141 ;;
+   142                           
+   143                           	psect	text1
+   144  007FC6                     __ptext1:
+   145                           	opt stack 0
+   146  007FC6                     __end_of_main:
+   147                           	opt stack 0
+   148  007FC6                     _read_from_ft245:
+   149                           	opt stack 29
+   150                           
+   151                           ;FT245.C: 33: RE2=0;
+   152  007FC6  9484               	bcf	3972,2,c	;volatile
+   153                           
+   154                           ;FT245.C: 34: delay50us(10);
+   155  007FC8  6A02               	clrf	?_delay50us+1,c
+   156  007FCA  0E0A               	movlw	10
+   157  007FCC  6E01               	movwf	?_delay50us,c
+   158  007FCE  ECEF  F03F         	call	_delay50us	;wreg free
+   159                           
+   160                           ;FT245.C: 35: RE2=1;
+   161  007FD2  8484               	bsf	3972,2,c	;volatile
+   162                           
+   163                           ;FT245.C: 36: delay50us(10);
+   164  007FD4  6A02               	clrf	?_delay50us+1,c
+   165  007FD6  0E0A               	movlw	10
+   166  007FD8  6E01               	movwf	?_delay50us,c
+   167  007FDA  EFEF  F03F         	goto	_delay50us	;wreg free
+   168  007FDE                     __end_of_read_from_ft245:
+   169                           	opt stack 0
+   170                           status	equ	0xFD8
+   171                           
+   172 ;; *************** function _delay50us *****************
+   173 ;; Defined at:
+   174 ;;		line 16 in file "E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C"
+   175 ;; Parameters:    Size  Location     Type
+   176 ;;  t               2    0[COMRAM] int 
+   177 ;; Auto vars:     Size  Location     Type
+   178 ;;  j               1    2[COMRAM] unsigned char 
+   179 ;; Return value:  Size  Location     Type
+   180 ;;		None               void
+   181 ;; Registers used:
+   182 ;;		wreg, status,2, status,0
+   183 ;; Tracked objects:
+   184 ;;		On entry : 0/0
+   185 ;;		On exit  : 0/0
+   186 ;;		Unchanged: FFFFFFFF/0
+   187 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   188 ;;      Params:         2       0       0       0       0       0       0
+   189 ;;      Locals:         1       0       0       0       0       0       0
+   190 ;;      Temps:          0       0       0       0       0       0       0
+   191 ;;      Totals:         3       0       0       0       0       0       0
+   192 ;;Total ram usage:        3 bytes
+   193 ;; Hardware stack levels used:    1
+   194 ;; This function calls:
+   195 ;;		Nothing
+   196 ;; This function is called by:
+   197 ;;		_read_from_ft245
+   198 ;; This function uses a non-reentrant model
+   199 ;;
+   200                           
+   201                           	psect	text2
+   202  007FDE                     __ptext2:
+   203                           	opt stack 0
+   204  007FDE                     _delay50us:
+   205                           	opt stack 29
+   206  007FDE                     l610:
+   207                           
+   208                           ;FT245.C: 17: uint8 j;
+   209                           ;FT245.C: 18: for(;t>0;t--)
+   210  007FDE  5002               	movf	delay50us@t+1,w,c
+   211  007FE0  0A80               	xorlw	128
+   212  007FE2  0F80               	addlw	-128
+   213  007FE4  0E01               	movlw	1
+   214  007FE6  B4D8               	btfsc	status,2,c
+   215  007FE8  5C01               	subwf	delay50us@t,w,c
+   216  007FEA  A0D8               	btfss	status,0,c
+   217  007FEC  0012               	return	
+   218                           
+   219                           ;FT245.C: 19: for(j=0;j<70;j++)
+   220  007FEE  6A03               	clrf	delay50us@j,c
+   221  007FF0                     l618:
+   222                           
+   223                           ;FT245.C: 20: ;
+   224  007FF0  2A03               	incf	delay50us@j,f,c
+   225  007FF2  0E45               	movlw	69
+   226  007FF4  6403               	cpfsgt	delay50us@j,c
+   227  007FF6  D7FC               	goto	l618
+   228  007FF8  0601               	decf	delay50us@t,f,c
+   229  007FFA  A0D8               	btfss	status,0,c
+   230  007FFC  0602               	decf	delay50us@t+1,f,c
+   231  007FFE  D7EF               	goto	l610
+   232  008000                     __end_of_delay50us:
+   233                           	opt stack 0
+   234  0000                     status	equ	0xFD8
+   235                           status	equ	0xFD8
+   236                           
+   237                           	psect	text3
+   238  000000                     __ptext3:
+   239                           	opt stack 0
+   240                           status	equ	0xFD8
+   241                           
+   242                           	psect	rparam
+   243  0000                     status	equ	0xFD8
+   244                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM          127      3       3
+    BANK0           128      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _read_from_ft245->_delay50us
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0      60
+                    _read_from_ft245
+ ---------------------------------------------------------------------------------
+ (1) _read_from_ft245                                      0     0      0      60
+                          _delay50us
+ ---------------------------------------------------------------------------------
+ (2) _delay50us                                            3     1      2      60
+                                              0 COMRAM     3     1      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _read_from_ft245
+     _delay50us
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           7F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              7F      3       3       1        2.4%
+STACK                0      0       2       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            80      0       0       4        0.0%
+BANK0               80      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BANK5              100      0       0      14        0.0%
+ABS                  0      0       0      15        0.0%
+BITBANK5           100      0       0      16        0.0%
+BIGRAM             5FF      0       0      17        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+HI-TECH Software PICC-18 Macro Assembler V9.80 build 11162 
+Symbol Table                                                                                   Fri Dec 30 19:07:17 2011
+
+                     l610 7FDE                       l618 7FF0                       l634 7FC0  
+                     _RE2 007C22                      _main 7FBA                      start 0000  
+                   ?_main 0001                     _TRISB 000F93                     status 000FD8  
+       ??_read_from_ft245 0004              __end_of_main 7FC6                    ??_main 0004  
+           __activetblptr 000000                    _ADCON1 000FC1                    _TRISE2 007CB2  
+              __accesstop 0080            __pcstackCOMRAM 0001        __size_of_delay50us 0022  
+         _read_from_ft245 7FC6         __end_of_delay50us 8000                   __Hparam 0000  
+                 __Lparam 0000                delay50us@j 0003                delay50us@t 0001  
+                 __pcinit 7FB4                   __ramtop 0600                   __ptext0 7FBA  
+                 __ptext1 7FC6                   __ptext2 7FDE                   __ptext3 0000  
+    end_of_initialization 7FB4   __end_of_read_from_ft245 7FDE       start_initialization 7FB4  
+        ?_read_from_ft245 0001                 _delay50us 7FDE                ?_delay50us 0001  
+                __Hrparam 0000                  __Lrparam 0000             __size_of_main 000C  
+             ??_delay50us 0003  __size_of_read_from_ft245 0018  

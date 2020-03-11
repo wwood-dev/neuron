@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+DATA_DDR::TRISB	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	8;"	d	line:8	file:
+DATA_PORT	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	9;"	d	line:9	file:
+OUT_RD::TRISE2=0	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	11;"	d	line:11	file:
+RD_OFF::RE2=0	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	13;"	d	line:13	file:
+RD_ON::RE2=1	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	12;"	d	line:12	file:
+delay50ms	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	23;"	f	line:23	signature:(sint16 t)
+delay50us	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	15;"	f	line:15	signature:(sint16 t)
+i	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	25;"	l	line:25
+j	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	17;"	l	line:17
+main	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	39;"	f	line:39
+read_from_ft245	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	31;"	f	line:31
+sint16	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	6;"	t	line:6	file:
+sint8	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	5;"	t	line:5	file:
+uint16	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	4;"	t	line:4	file:
+uint8	E:\Program\PRGPIC\testPIC18F4520\FT245\RD\FT245.C	3;"	t	line:3	file:

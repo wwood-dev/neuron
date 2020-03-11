@@ -1,0 +1,4 @@
+_main: CODE, 32698 0 12
+_delay50us: CODE, 32734 0 34
+_read_from_ft245: CODE, 32710 0 24
+Total: 70

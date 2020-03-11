@@ -1,0 +1,327 @@
+ -- Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, the Altera Quartus II License Agreement,
+ -- the Altera MegaCore Function License Agreement, or other 
+ -- applicable license agreement, including, without limitation, 
+ -- that your use is for the sole purpose of programming logic 
+ -- devices manufactured by Altera and sold by Altera or its 
+ -- authorized distributors.  Please refer to the applicable 
+ -- agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1:		2.5V
+ --					Bank 2:		2.5V
+ --					Bank 3:		2.5V
+ --					Bank 4:		2.5V
+ --					Bank 5:		2.5V
+ --					Bank 6:		2.5V
+ --					Bank 7:		2.5V
+ --					Bank 8:		2.5V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --					It can also be used to report unused dedicated pins. The connection
+ --					on the board for unused dedicated pins depends on whether this will
+ --					be used in a future design. One example is device migration. When
+ --					using device migration, refer to the device pin-tables. If it is a
+ --					GND pin in the pin table or if it will not be used in a future design
+ --					for another purpose the it MUST be connected to GND. If it is an unused
+ --					dedicated pin, then it can be connected to a valid signal on the board
+ --					(low, high, or toggling) if that signal is required for a different
+ --					revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --					This pin should be connected to GND. It may also be connected  to a
+ --					valid signal  on the board  (low, high, or toggling)  if that signal
+ --					is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --           	    or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus II 64-Bit Version 14.1.1 Build 190 01/19/2015 SJ Web Edition
+CHIP  "DevBD"  ASSIGNED TO AN: EP4CE10F17C8
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
+IO16_2[5]                    : A2        : bidir  : 2.5 V             :         : 8         : Y              
+IO16_2[7]                    : A3        : bidir  : 2.5 V             :         : 8         : Y              
+IO16_2[9]                    : A4        : bidir  : 2.5 V             :         : 8         : Y              
+IO16_2[11]                   : A5        : bidir  : 2.5 V             :         : 8         : Y              
+IO16_2[13]                   : A6        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[0]                    : A7        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[3]                    : A8        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[5]                    : A9        : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[21]                   : A10       : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[23]                   : A11       : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[22]                   : A12       : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[24]                   : A13       : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[26]                   : A14       : bidir  : 2.5 V             :         : 7         : Y              
+RESERVED_INPUT               : A15       :        :                   :         : 7         :                
+VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
+IO16_2[4]                    : B1        : bidir  : 2.5 V             :         : 1         : Y              
+GND                          : B2        : gnd    :                   :         :           :                
+IO16_2[6]                    : B3        : bidir  : 2.5 V             :         : 8         : Y              
+IO16_2[8]                    : B4        : bidir  : 2.5 V             :         : 8         : Y              
+IO16_2[10]                   : B5        : bidir  : 2.5 V             :         : 8         : Y              
+IO16_2[12]                   : B6        : bidir  : 2.5 V             :         : 8         : Y              
+LED[3]                       : B7        : output : 2.5 V             :         : 8         : Y              
+IO32_3[2]                    : B8        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[4]                    : B9        : bidir  : 2.5 V             :         : 7         : Y              
+LED[2]                       : B10       : output : 2.5 V             :         : 7         : Y              
+IO32_3[20]                   : B11       : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[25]                   : B12       : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[27]                   : B13       : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[30]                   : B14       : bidir  : 2.5 V             :         : 7         : Y              
+GND                          : B15       : gnd    :                   :         :           :                
+Reset_n                      : B16       : input  : 2.5 V             :         : 6         : Y              
+~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C1        : input  : 2.5 V             :         : 1         : N              
+IO16_2[3]                    : C2        : bidir  : 2.5 V             :         : 1         : Y              
+RESERVED_INPUT               : C3        :        :                   :         : 8         :                
+VCCIO8                       : C4        : power  :                   : 2.5V    : 8         :                
+GND                          : C5        : gnd    :                   :         :           :                
+IO32_3[7]                    : C6        : bidir  : 2.5 V             :         : 8         : Y              
+VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
+IO32_3[17]                   : C8        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[19]                   : C9        : bidir  : 2.5 V             :         : 7         : Y              
+VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
+LED[1]                       : C11       : output : 2.5 V             :         : 7         : Y              
+GND                          : C12       : gnd    :                   :         :           :                
+VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
+RESERVED_INPUT               : C14       :        :                   :         : 7         :                
+RESERVED_INPUT               : C15       :        :                   :         : 6         :                
+RESERVED_INPUT               : C16       :        :                   :         : 6         :                
+IO16_2[2]                    : D1        : bidir  : 2.5 V             :         : 1         : Y              
+~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D2        : input  : 2.5 V             :         : 1         : N              
+IO16_2[15]                   : D3        : bidir  : 2.5 V             :         : 8         : Y              
+RESERVED_INPUT               : D4        :        :                   :         : 1         :                
+IO32_3[6]                    : D5        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[8]                    : D6        : bidir  : 2.5 V             :         : 8         : Y              
+GND                          : D7        : gnd    :                   :         :           :                
+IO32_3[16]                   : D8        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[18]                   : D9        : bidir  : 2.5 V             :         : 7         : Y              
+GND                          : D10       : gnd    :                   :         :           :                
+IO32_3[31]                   : D11       : bidir  : 2.5 V             :         : 7         : Y              
+LED[0]                       : D12       : output : 2.5 V             :         : 7         : Y              
+VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT               : D14       :        :                   :         : 7         :                
+RESERVED_INPUT               : D15       :        :                   :         : 6         :                
+RESERVED_INPUT               : D16       :        :                   :         : 6         :                
+GND+                         : E1        :        :                   :         : 1         :                
+GND                          : E2        : gnd    :                   :         :           :                
+VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
+GND                          : E4        : gnd    :                   :         :           :                
+RESERVED_INPUT               : E5        :        :                   :         : 1         :                
+IO32_3[1]                    : E6        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[9]                    : E7        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[10]                   : E8        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[14]                   : E9        : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[15]                   : E10       : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[28]                   : E11       : bidir  : 2.5 V             :         : 7         : Y              
+GNDA2                        : E12       : gnd    :                   :         :           :                
+GND                          : E13       : gnd    :                   :         :           :                
+VCCIO6                       : E14       : power  :                   : 2.5V    : 6         :                
+GND+                         : E15       :        :                   :         : 6         :                
+clk50                        : E16       : input  : 2.5 V             :         : 6         : Y              
+IO16_2[1]                    : F1        : bidir  : 2.5 V             :         : 1         : Y              
+IO16_2[0]                    : F2        : bidir  : 2.5 V             :         : 1         : Y              
+IO16_2[14]                   : F3        : bidir  : 2.5 V             :         : 1         : Y              
+nSTATUS                      : F4        :        :                   :         : 1         :                
+RESERVED_INPUT               : F5        :        :                   :         : 1         :                
+RESERVED_INPUT               : F6        :        :                   :         : 8         :                
+RESERVED_INPUT               : F7        :        :                   :         : 8         :                
+IO32_3[11]                   : F8        : bidir  : 2.5 V             :         : 8         : Y              
+IO32_3[13]                   : F9        : bidir  : 2.5 V             :         : 7         : Y              
+IO32_3[29]                   : F10       : bidir  : 2.5 V             :         : 7         : Y              
+IO8_1[0]                     : F11       : bidir  : 2.5 V             :         : 7         : Y              
+VCCA2                        : F12       : power  :                   : 2.5V    :           :                
+RESERVED_INPUT               : F13       :        :                   :         : 6         :                
+RESERVED_INPUT               : F14       :        :                   :         : 6         :                
+IO32_1[11]                   : F15       : bidir  : 2.5 V             :         : 6         : Y              
+IO32_1[10]                   : F16       : bidir  : 2.5 V             :         : 6         : Y              
+IO8_2[7]                     : G1        : bidir  : 2.5 V             :         : 1         : Y              
+IO8_2[6]                     : G2        : bidir  : 2.5 V             :         : 1         : Y              
+VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
+GND                          : G4        : gnd    :                   :         :           :                
+RESERVED_INPUT               : G5        :        :                   :         : 1         :                
+VCCINT                       : G6        : power  :                   : 1.2V    :           :                
+VCCINT                       : G7        : power  :                   : 1.2V    :           :                
+VCCINT                       : G8        : power  :                   : 1.2V    :           :                
+VCCINT                       : G9        : power  :                   : 1.2V    :           :                
+VCCINT                       : G10       : power  :                   : 1.2V    :           :                
+IO32_3[12]                   : G11       : bidir  : 2.5 V             :         : 6         : Y              
+MSEL2                        : G12       :        :                   :         : 6         :                
+GND                          : G13       : gnd    :                   :         :           :                
+VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
+IO32_1[13]                   : G15       : bidir  : 2.5 V             :         : 6         : Y              
+IO32_1[12]                   : G16       : bidir  : 2.5 V             :         : 6         : Y              
+~ALTERA_DCLK~                : H1        : output : 2.5 V             :         : 1         : N              
+~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V             :         : 1         : N              
+altera_reserved_tck          : H3        : input  : 2.5 V             :         : 1         : N              
+altera_reserved_tdi          : H4        : input  : 2.5 V             :         : 1         : N              
+nCONFIG                      : H5        :        :                   :         : 1         :                
+VCCINT                       : H6        : power  :                   : 1.2V    :           :                
+GND                          : H7        : gnd    :                   :         :           :                
+GND                          : H8        : gnd    :                   :         :           :                
+GND                          : H9        : gnd    :                   :         :           :                
+GND                          : H10       : gnd    :                   :         :           :                
+VCCINT                       : H11       : power  :                   : 1.2V    :           :                
+MSEL1                        : H12       :        :                   :         : 6         :                
+MSEL0                        : H13       :        :                   :         : 6         :                
+CONF_DONE                    : H14       :        :                   :         : 6         :                
+GND                          : H15       : gnd    :                   :         :           :                
+GND                          : H16       : gnd    :                   :         :           :                
+IO8_2[5]                     : J1        : bidir  : 2.5 V             :         : 2         : Y              
+IO8_2[4]                     : J2        : bidir  : 2.5 V             :         : 2         : Y              
+nCE                          : J3        :        :                   :         : 1         :                
+altera_reserved_tdo          : J4        : output : 2.5 V             :         : 1         : N              
+altera_reserved_tms          : J5        : input  : 2.5 V             :         : 1         : N              
+RESERVED_INPUT               : J6        :        :                   :         : 2         :                
+GND                          : J7        : gnd    :                   :         :           :                
+GND                          : J8        : gnd    :                   :         :           :                
+GND                          : J9        : gnd    :                   :         :           :                
+GND                          : J10       : gnd    :                   :         :           :                
+IO8_1[2]                     : J11       : bidir  : 2.5 V             :         : 5         : Y              
+IO8_1[4]                     : J12       : bidir  : 2.5 V             :         : 5         : Y              
+IO8_1[7]                     : J13       : bidir  : 2.5 V             :         : 5         : Y              
+RESERVED_INPUT               : J14       :        :                   :         : 5         :                
+IO32_1[14]                   : J15       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[15]                   : J16       : bidir  : 2.5 V             :         : 5         : Y              
+IO8_2[3]                     : K1        : bidir  : 2.5 V             :         : 2         : Y              
+IO8_2[2]                     : K2        : bidir  : 2.5 V             :         : 2         : Y              
+VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
+GND                          : K4        : gnd    :                   :         :           :                
+RESERVED_INPUT               : K5        :        :                   :         : 2         :                
+RESERVED_INPUT               : K6        :        :                   :         : 2         :                
+VCCINT                       : K7        : power  :                   : 1.2V    :           :                
+IO32_2[27]                   : K8        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[24]                   : K9        : bidir  : 2.5 V             :         : 4         : Y              
+IO8_1[1]                     : K10       : bidir  : 2.5 V             :         : 4         : Y              
+IO8_1[3]                     : K11       : bidir  : 2.5 V             :         : 5         : Y              
+IO8_1[5]                     : K12       : bidir  : 2.5 V             :         : 5         : Y              
+GND                          : K13       : gnd    :                   :         :           :                
+VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
+IO32_1[16]                   : K15       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[17]                   : K16       : bidir  : 2.5 V             :         : 5         : Y              
+IO8_2[1]                     : L1        : bidir  : 2.5 V             :         : 2         : Y              
+IO8_2[0]                     : L2        : bidir  : 2.5 V             :         : 2         : Y              
+IO16_1[9]                    : L3        : bidir  : 2.5 V             :         : 2         : Y              
+IO16_1[8]                    : L4        : bidir  : 2.5 V             :         : 2         : Y              
+VCCA1                        : L5        : power  :                   : 2.5V    :           :                
+IO16_1[0]                    : L6        : bidir  : 2.5 V             :         : 2         : Y              
+IO32_2[31]                   : L7        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[26]                   : L8        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[25]                   : L9        : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[8]                    : L10       : bidir  : 2.5 V             :         : 4         : Y              
+IO8_1[6]                     : L11       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[0]                    : L12       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[2]                    : L13       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[1]                    : L14       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[18]                   : L15       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[19]                   : L16       : bidir  : 2.5 V             :         : 5         : Y              
+GND+                         : M1        :        :                   :         : 2         :                
+GND+                         : M2        :        :                   :         : 2         :                
+VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
+GND                          : M4        : gnd    :                   :         :           :                
+GNDA1                        : M5        : gnd    :                   :         :           :                
+IO32_2[30]                   : M6        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[28]                   : M7        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[29]                   : M8        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[22]                   : M9        : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[9]                    : M10       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[6]                    : M11       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[3]                    : M12       : bidir  : 2.5 V             :         : 5         : Y              
+GND                          : M13       : gnd    :                   :         :           :                
+VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
+GND+                         : M15       :        :                   :         : 5         :                
+GND+                         : M16       :        :                   :         : 5         :                
+IO16_1[15]                   : N1        : bidir  : 2.5 V             :         : 2         : Y              
+IO16_1[14]                   : N2        : bidir  : 2.5 V             :         : 2         : Y              
+IO16_1[7]                    : N3        : bidir  : 2.5 V             :         : 3         : Y              
+VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
+IO16_1[5]                    : N5        : bidir  : 2.5 V             :         : 3         : Y              
+IO16_1[4]                    : N6        : bidir  : 2.5 V             :         : 3         : Y              
+GND                          : N7        : gnd    :                   :         :           :                
+IO16_1[1]                    : N8        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[5]                    : N9        : bidir  : 2.5 V             :         : 4         : Y              
+GND                          : N10       : gnd    :                   :         :           :                
+IO32_2[3]                    : N11       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_2[1]                    : N12       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[7]                    : N13       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[5]                    : N14       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[20]                   : N15       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[21]                   : N16       : bidir  : 2.5 V             :         : 5         : Y              
+IO16_1[13]                   : P1        : bidir  : 2.5 V             :         : 2         : Y              
+IO16_1[12]                   : P2        : bidir  : 2.5 V             :         : 2         : Y              
+IO16_1[6]                    : P3        : bidir  : 2.5 V             :         : 3         : Y              
+VCCIO3                       : P4        : power  :                   : 2.5V    : 3         :                
+GND                          : P5        : gnd    :                   :         :           :                
+IO16_1[3]                    : P6        : bidir  : 2.5 V             :         : 3         : Y              
+VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
+IO16_1[2]                    : P8        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[4]                    : P9        : bidir  : 2.5 V             :         : 4         : Y              
+VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
+IO32_2[2]                    : P11       : bidir  : 2.5 V             :         : 4         : Y              
+GND                          : P12       : gnd    :                   :         :           :                
+VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
+IO32_1[4]                    : P14       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[22]                   : P15       : bidir  : 2.5 V             :         : 5         : Y              
+IO32_1[23]                   : P16       : bidir  : 2.5 V             :         : 5         : Y              
+IO16_1[11]                   : R1        : bidir  : 2.5 V             :         : 2         : Y              
+GND                          : R2        : gnd    :                   :         :           :                
+IO32_2[20]                   : R3        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[18]                   : R4        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[16]                   : R5        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[14]                   : R6        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[12]                   : R7        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[10]                   : R8        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[8]                    : R9        : bidir  : 2.5 V             :         : 4         : Y              
+IO32_2[6]                    : R10       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_2[0]                    : R11       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[31]                   : R12       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[29]                   : R13       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[27]                   : R14       : bidir  : 2.5 V             :         : 4         : Y              
+GND                          : R15       : gnd    :                   :         :           :                
+IO32_1[25]                   : R16       : bidir  : 2.5 V             :         : 5         : Y              
+VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
+IO16_1[10]                   : T2        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[23]                   : T3        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[21]                   : T4        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[19]                   : T5        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[17]                   : T6        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[15]                   : T7        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[13]                   : T8        : bidir  : 2.5 V             :         : 3         : Y              
+IO32_2[11]                   : T9        : bidir  : 2.5 V             :         : 4         : Y              
+IO32_2[9]                    : T10       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_2[7]                    : T11       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[30]                   : T12       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[28]                   : T13       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[26]                   : T14       : bidir  : 2.5 V             :         : 4         : Y              
+IO32_1[24]                   : T15       : bidir  : 2.5 V             :         : 4         : Y              
+VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                

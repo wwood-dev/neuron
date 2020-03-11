@@ -1,0 +1,101 @@
+|display
+nrst => nrst.IN1
+clk => clk.IN1
+
+
+|display|sel_4:U1
+clk => sel_clk.CLK
+clk => count1[0].CLK
+clk => count1[1].CLK
+clk => count1[2].CLK
+clk => count1[3].CLK
+clk => count1[4].CLK
+clk => count1[5].CLK
+clk => count1[6].CLK
+clk => count1[7].CLK
+clk => count1[8].CLK
+clk => count1[9].CLK
+clk => count1[10].CLK
+clk => count1[11].CLK
+clk => count1[12].CLK
+clk => count1[13].CLK
+clk => count1[14].CLK
+clk => count1[15].CLK
+clk => count1[16].CLK
+clk => count1[17].CLK
+clk => count1[18].CLK
+clk => count1[19].CLK
+clk => count1[20].CLK
+clk => count1[21].CLK
+clk => count1[22].CLK
+clk => count1[23].CLK
+clk => count1[24].CLK
+clk => count1[25].CLK
+clk => count1[26].CLK
+clk => count1[27].CLK
+clk => count1[28].CLK
+clk => count1[29].CLK
+clk => count1[30].CLK
+clk => count1[31].CLK
+nrst => sel_clk.ACLR
+nrst => count1[0].ACLR
+nrst => count1[1].ACLR
+nrst => count1[2].ACLR
+nrst => count1[3].ACLR
+nrst => count1[4].ACLR
+nrst => count1[5].ACLR
+nrst => count1[6].ACLR
+nrst => count1[7].ACLR
+nrst => count1[8].ACLR
+nrst => count1[9].ACLR
+nrst => count1[10].ACLR
+nrst => count1[11].ACLR
+nrst => count1[12].ACLR
+nrst => count1[13].ACLR
+nrst => count1[14].ACLR
+nrst => count1[15].ACLR
+nrst => count1[16].ACLR
+nrst => count1[17].ACLR
+nrst => count1[18].ACLR
+nrst => count1[19].ACLR
+nrst => count1[20].ACLR
+nrst => count1[21].ACLR
+nrst => count1[22].ACLR
+nrst => count1[23].ACLR
+nrst => count1[24].ACLR
+nrst => count1[25].ACLR
+nrst => count1[26].ACLR
+nrst => count1[27].ACLR
+nrst => count1[28].ACLR
+nrst => count1[29].ACLR
+nrst => count1[30].ACLR
+nrst => count1[31].ACLR
+nrst => sel[0]~reg0.PRESET
+nrst => sel[1]~reg0.ACLR
+nrst => sel[2]~reg0.ACLR
+nrst => sel[3]~reg0.ACLR
+number[0] => Mux3.IN15
+number[1] => Mux2.IN15
+number[2] => Mux1.IN15
+number[3] => Mux0.IN15
+number[4] => Mux3.IN14
+number[5] => Mux2.IN14
+number[6] => Mux1.IN14
+number[7] => Mux0.IN14
+number[8] => Mux3.IN13
+number[9] => Mux2.IN13
+number[10] => Mux1.IN13
+number[11] => Mux0.IN13
+number[12] => Mux3.IN12
+number[13] => Mux2.IN12
+number[14] => Mux1.IN12
+number[15] => Mux0.IN12
+
+
+|display|sel_4:U1|seg_7:output_seg
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+
+

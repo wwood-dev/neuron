@@ -1,0 +1,26 @@
+module FT245IO(
+input wire Clock,
+inout [7:0] Data,
+output ReadReq,
+output WriteReq,
+input ReadAvail,
+output WriteEna,
+output ResetDev,
+output wire [7:0] ReceivedData,
+input wire [7:0] DataToSend,
+input wire EnaSend,
+output wire DataValid )
+
+always @(posedge Clock)
+   begin
+	
+	
+	end
+	
+	
+	
+	
+	
+	
+	
+endmodule

@@ -1,0 +1,19 @@
+
+State Machine - |DevBD|SignalDistributor:inst7|State
+Name State~24 State~23 State~22 State~21 State~20 State~19 State~18 
+State.00000000 0 0 0 0 0 0 0 
+State.00000001 0 0 0 0 0 0 1 
+State.00000010 0 0 0 0 0 1 0 
+State.00000011 0 0 0 0 0 1 1 
+State.00100000 0 1 0 0 0 0 0 
+State.00100001 0 1 0 0 0 0 1 
+State.01000000 1 0 0 0 0 0 0 
+State.01000001 1 0 0 0 0 0 1 
+State.01000010 1 0 0 0 0 1 0 
+State.01000011 1 0 0 0 0 1 1 
+State.01000100 1 0 0 0 1 0 0 
+State.01000101 1 0 0 0 1 0 1 
+State.01010000 1 0 1 0 0 0 0 
+State.01100000 1 1 0 0 0 0 0 
+State.11111110 1 1 1 1 1 1 0 
+State.11111111 1 1 1 1 1 1 1 
