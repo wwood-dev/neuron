@@ -32,6 +32,12 @@ The Cyclone IV E EP4CE10F17C8 programmable logic device (PLD) is applied to the 
 
 \COMArbitrary\ is a folder with a VB.NET project of the program for sending and receiving data via RS-232; it was used when debugging the board.
 
+The upper hierarchy of the project is made in the form of a block schematic and includes the following modules:
+>PLL – an Altera PLL mega function that provides the ability to set the design clock frequency and stabilize the clock input.
+>async_recevier – a receiver module for data received via the RS-232 interface. It was implemented by fpga4fun.com & KNJN LLC.
+>SignalDistributor – a module that carries out byte-by-byte receiving and sending data via the RS and controls signal contacts of the board.
+>fifo1 – an Altera FIFO mega function that implements a first-in and first-out buffer.
+>async_transmitter – a transmitter module for data sending via the RS-232 interface. It was implemented by fpga4fun.com & KNJN LLC.
 
 
 
@@ -49,4 +55,5 @@ The Cyclone IV E EP4CE10F17C8 programmable logic device (PLD) is applied to the 
 
 
 
-NEURON firmware for communicate pc->plis
+
+
