@@ -18,4 +18,8 @@ The board has 136 digital contacts capable to operate for both sending a pre-set
 
 The Cyclone IV E EP4CE10F17C8 programmable logic device (PLD) is applied to the board. The project for the PLD is developed in the Intel (Altera) Quartus 11 environment; any version of this environment that supports the specified PLD can be used for compilation.
 
+
+
+## Description ##
+
 NEURON firmware for communicate pc->plis
