@@ -58,6 +58,7 @@ To build a project, just open it in Quartus and start compiling. If you use a di
 
 
 
+![Neuron](https://i.ibb.co/7pXhCz1/19png.png)
 
 
 
