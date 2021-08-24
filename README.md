@@ -6,7 +6,7 @@
 
 
 
-![Neuron](https://i.ibb.co/89pg4s6/19png.png)
+![Neuron](https://i.ibb.co/4mFJXVw/19png.png)
 
 
 
