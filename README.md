@@ -49,6 +49,15 @@ The upper hierarchy of the project is made in the form of a block schematic and 
 
 >async_transmitter – a transmitter module for data sending via the RS-232 interface. It was implemented by fpga4fun.com & KNJN LLC.
 
+The settings for the RS-232 operation are set through the parameters of the async_recevier and async_transmitter modules before compiling the project.
+
+
+
+## Installation ##
+To build a project, just open it in Quartus and start compiling. If you use a different Quartus version, you may need to regenerate the mega functions.
+
+
+
 
 
 
