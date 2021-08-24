@@ -23,13 +23,16 @@ The Cyclone IV E EP4CE10F17C8 programmable logic device (PLD) is applied to the 
 ## Project files: ##
 
 \DevBD\ is a folder with Quartus 11 project for the PLD board. It contains Quartus service files generated during the operation, as well as the following custom ones:
+
 >async.v – an RS transceiver implemented by fpga4fun.com & KNJN LLC
+
 >SignalDistributor.v – a module that carries out byte-by-byte receiving and sending data via the RS and controls signal contacts of the board
+
 >fifo1.qip – an Altera FIFO mega function file
+
 >PLL.qip – an Altera PLL mega function file
 
 \output_files\ is a folder with compilation result files. It contains a file for programming the PLD.
-
 \COMArbitrary\ is a folder with a VB.NET project of the program for sending and receiving data via RS-232; it was used when debugging the board.
 
 The upper hierarchy of the project is made in the form of a block schematic and includes the following modules:
