@@ -4,6 +4,6 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/wwood-dev/neuron)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/wwood-dev/neuron)
 
-![Neuron](https://i.ibb.co/DDK4f9P/19png.png)
+![Neuron](https://i.ibb.co/89pg4s6/19png.png)
 
 NEURON firmware for communicate pc->plis
