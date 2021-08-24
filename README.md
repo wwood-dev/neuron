@@ -33,7 +33,6 @@ The Cyclone IV E EP4CE10F17C8 programmable logic device (PLD) is applied to the 
 >PLL.qip – an Altera PLL mega function file
 
 \output_files\ is a folder with compilation result files. It contains a file for programming the PLD.
-
 \COMArbitrary\ is a folder with a VB.NET project of the program for sending and receiving data via RS-232; it was used when debugging the board.
 
 
